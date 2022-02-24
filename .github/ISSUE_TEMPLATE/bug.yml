@@ -1,62 +1,61 @@
 name: Bug Report
 description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
+title: ""
+labels: ["Type: Bug", "Status: Triage"]
 assignees:
-  - octocat
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
+        Thanks for taking the time to fill out this bug report! Before submitting your issue, pleas make
+        sure you are using the latest version of the charm. If not, please switch to this image prior to 
+        posting your report to make sure it's not already solved.
+  - type: textarea
+    id: bug-description
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
+      label: What happened?
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: To Reproduce
+      description: |
+        Please provide a step-by-step instruction of how to reproduce the behavior,
+        if at all possible.
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: input
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem.
     validations:
       required: false
   - type: textarea
-    id: what-happened
+    id: environment
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
-    validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-    validations:
-      required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+      label: |
+        - Are you running Juju locally, on lxd, in multipass or on some other platform?
+        - What track and channel you deployed the charm from (ie. `latest/edge` or similar).
+        - Version of any applicable components, like:
+          - cuju
+          - controller
+          - lxd
+          - Microk8s
+          - Multipass
   - type: textarea
     id: logs
     attributes:
       label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      description: |
+        Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+        Fetch the logs using `juju debug-log --replay` and `kubectl logs ...`. Additional details available in the juju docs 
+        at https://juju.is/docs/olm/juju-logs
       render: shell
-  - type: checkboxes
-    id: terms
+  - type: textarea
+    id: additional-context
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+      label: Additional context
