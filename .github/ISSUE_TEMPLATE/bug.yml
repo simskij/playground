@@ -23,18 +23,10 @@ body:
     attributes:
       label: To Reproduce
       description: >
-        Please provide a step-by-step instruction of how to reproduce the behavior,
-        if at all possible. 
+        Please provide a step-by-step instruction of how to reproduce the behavior.
       placeholder: Tell us what you see!
     validations:
       required: true
-  - type: input
-    id: screenshots
-    attributes:
-      label: Screenshots
-      description: 
-    validations:
-      required: false
   - type: textarea
     id: environment
     attributes:
