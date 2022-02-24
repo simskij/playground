@@ -11,7 +11,10 @@ body:
   - type: textarea
     id: bug-description
     attributes:
-      label: What happened?
+      label: Bug Description
+      description: >
+        If applicable, add screenshots to help explain your problem. If applicable, add screenshots to 
+        help explain the problem you are facing.
       placeholder: Tell us what you see!
     validations:
       required: true
@@ -21,7 +24,7 @@ body:
       label: To Reproduce
       description: |
         Please provide a step-by-step instruction of how to reproduce the behavior,
-        if at all possible.
+        if at all possible. 
       placeholder: Tell us what you see!
     validations:
       required: true
@@ -29,7 +32,7 @@ body:
     id: screenshots
     attributes:
       label: Screenshots
-      description: If applicable, add screenshots to help explain your problem.
+      description: 
     validations:
       required: false
   - type: textarea
@@ -37,9 +40,7 @@ body:
     attributes:
       label: Environment
       description: |
-      
         We need to know a bit more about the context in which you run the charm.
-        
         - Are you running Juju locally, on lxd, in multipass or on some other platform?
         - What track and channel you deployed the charm from (ie. `latest/edge` or similar).
         - Version of any applicable components, like the juju snap, the model controller, lxd, microk8s, and/or multipass.
