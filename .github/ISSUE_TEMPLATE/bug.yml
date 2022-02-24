@@ -42,8 +42,7 @@ body:
         
         - Are you running Juju locally, on lxd, in multipass or on some other platform?
         - What track and channel you deployed the charm from (ie. `latest/edge` or similar).
-        - Version of any applicable components, like the juju snap, the model controller, 
-        lxd, microk8s, and/or multipass
+        - Version of any applicable components, like the juju snap, the model controller, lxd, microk8s, and/or multipass
   - type: textarea
     id: logs
     attributes:
